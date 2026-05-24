@@ -1,0 +1,162 @@
+/* pages/index/index.wxss */
+
+/* 欢迎区域 */
+.welcome {
+  margin-bottom: 10rpx;
+}
+
+.welcome-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--dark-color);
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 退出登录按钮 */
+.logout-button {
+  font-size: 28rpx;
+  color: var(--danger-color);
+  padding: 10rpx 20rpx;
+  border: 1rpx solid var(--danger-color);
+  border-radius: 20rpx;
+  transition: var(--transition);
+}
+
+.logout-button:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* 统计卡片 */
+.stats-card {
+  display: flex;
+  justify-content: space-around;
+  padding: 40rpx 30rpx;
+  transition: var(--transition);
+}
+
+.stats-card:hover {
+  transform: translateY(-5rpx);
+  box-shadow: var(--shadow-lg);
+}
+
+.stats-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stats-label {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.stats-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 快速操作 */
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
+}
+
+.quick-action {
+  width: 48%;
+  margin-bottom: 20rpx;
+}
+
+/* 交易记录 */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+.section-more {
+  font-size: 28rpx;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.section-more:hover {
+  color: #667eea;
+}
+
+.transaction-info {
+  flex: 1;
+}
+
+.transaction-category {
+  font-size: 34rpx;
+  color: var(--dark-color);
+  margin-bottom: 8rpx;
+  display: block;
+  font-weight: 500;
+}
+
+.transaction-time {
+  font-size: 26rpx;
+  color: var(--info-color);
+}
+
+.transaction-amount {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: var(--danger-color);
+  padding: 10rpx 20rpx;
+  background-color: #fef0f0;
+  border-radius: 10rpx;
+  transition: var(--transition);
+}
+
+.transaction-amount.income {
+  color: var(--success-color);
+  background-color: #f0f9eb;
+}
+
+.transaction-amount:hover {
+  transform: scale(1.05);
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 60rpx 40rpx;
+  color: var(--info-color);
+  font-size: 30rpx;
+  background-color: #fafafa;
+  border-radius: 12rpx;
+  margin-top: 20rpx;
+}
+
+/* 添加按钮 */
+.add-button {
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background: linear-gradient(135deg, var(--primary-color), #667eea);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  color: white;
+  font-size: 44rpx;
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6rpx 20rpx 0 rgba(0, 0, 0, 0.25);
+}

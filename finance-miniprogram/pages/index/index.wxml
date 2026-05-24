@@ -1,0 +1,74 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <view class="nav-bar">
+    <text class="nav-title">个人记账</text>
+    <text class="logout-button" bindtap="handleLogout">退出登录</text>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx;">
+    <view class="welcome">
+      <text class="welcome-text">欢迎回来！</text>
+    </view>
+  </view>
+  
+  <view class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <view class="stats-card">
+      <view class="stats-item">
+        <text class="stats-label">本月支出</text>
+        <text class="stats-value expense">¥{{monthlyExpense}}</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-label">本月收入</text>
+        <text class="stats-value income">¥{{monthlyIncome}}</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-label">本月结余</text>
+        <text class="stats-value balance">¥{{monthlyBalance}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="quick-actions">
+    <view class="quick-action" bindtap="navigateToAddTransaction">
+      <text class="quick-action-icon">+</text>
+      <text class="quick-action-text">记一笔</text>
+    </view>
+    <view class="quick-action" bindtap="navigateToStatistics">
+      <text class="quick-action-icon">📊</text>
+      <text class="quick-action-text">统计分析</text>
+    </view>
+    <view class="quick-action" bindtap="navigateToBudget">
+      <text class="quick-action-icon">💰</text>
+      <text class="quick-action-text">预算管理</text>
+    </view>
+    <view class="quick-action" bindtap="navigateToAiAssistant">
+      <text class="quick-action-icon">🤖</text>
+      <text class="quick-action-text">智能助手</text>
+    </view>
+  </view>
+  
+  <view class="card">
+    <view class="section-header">
+      <text class="section-title">最近交易</text>
+      <navigator url="/pages/transaction/transaction" class="section-more">查看全部</navigator>
+    </view>
+    
+    <view class="list">
+      <view class="list-item" wx:for="{{recentTransactions}}" wx:key="{{item.id}}">
+        <view class="transaction-info">
+          <text class="transaction-category">{{item.category}}</text>
+          <text class="transaction-time">{{item.transactionTime}}</text>
+        </view>
+        <text class="transaction-amount" wx:if="{{item.type === 1}}">-¥{{item.amount}}</text>
+        <text class="transaction-amount income" wx:else>+¥{{item.amount}}</text>
+      </view>
+      <view class="empty-tip" wx:if="{{recentTransactions.length === 0}}">
+        <text>暂无交易记录</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="add-button" bindtap="navigateToAddTransaction">
+    <text>+</text>
+  </view>
+</view>

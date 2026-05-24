@@ -1,0 +1,46 @@
+<!-- pages/transaction/transaction.wxml -->
+<view class="container">
+  <view class="nav-bar">
+    <text class="nav-title">交易记录</text>
+    <text class="add-btn" bindtap="navigateToAddTransaction">+ 记一笔</text>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx;">
+    <view class="filter">
+      <picker mode="date" fields="month" value="{{selectedMonth}}" bindchange="handleMonthChange">
+        <view class="picker">
+          <text>{{selectedMonth}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx;">
+    <view class="section-header">
+      <text class="section-title">本月交易</text>
+    </view>
+    
+    <view class="list">
+      <view class="list-item" wx:for="{{transactions}}" wx:key="{{item.id}}">
+        <view class="transaction-info" bindtap="navigateToEditTransaction" data-id="{{item.id}}">
+          <text class="transaction-category">{{item.category}}</text>
+          <text class="transaction-time">{{item.transactionTime}}</text>
+        </view>
+        <view class="transaction-amount-container">
+          <text class="transaction-amount" wx:if="{{item.type === 1}}">-¥{{item.amount}}</text>
+          <text class="transaction-amount income" wx:else>+¥{{item.amount}}</text>
+          <text class="edit-icon" bindtap="navigateToEditTransaction" data-id="{{item.id}}">✏️</text>
+          <text class="delete-icon" bindtap="handleDeleteTransaction" data-id="{{item.id}}">🗑️</text>
+        </view>
+      </view>
+      <view class="empty-tip" wx:if="{{transactions.length === 0}}">
+        <text>暂无交易记录</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="add-button" bindtap="navigateToAddTransaction">
+    <text>+</text>
+  </view>
+</view>

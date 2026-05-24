@@ -1,0 +1,146 @@
+/* pages/budget/budget.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #303133;
+}
+
+.filter {
+  background-color: white;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  color: #303133;
+}
+
+.arrow {
+  font-size: 24rpx;
+  color: #909399;
+}
+
+.budget-card {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.budget-title {
+  font-size: 32rpx;
+  color: #303133;
+}
+
+.budget-amount {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #409EFF;
+}
+
+.budget-progress {
+  margin-bottom: 20rpx;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f0f0f0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #67c23a;
+  border-radius: 10rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: #606266;
+  text-align: right;
+}
+
+.budget-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #606266;
+}
+
+.form {
+  background-color: white;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  color: #303133;
+}
+
+.input {
+  border: 1rpx solid #dcdfe6;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #409EFF;
+  color: white;
+  border-radius: 8rpx;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+
+.error-message {
+  color: #f56c6c;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+  margin-top: 50rpx;
+  font-size: 32rpx;
+  color: #909399;
+}

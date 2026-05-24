@@ -1,0 +1,42 @@
+<!-- pages/login/login.wxml -->
+<view class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+  <view class="logo" style="margin-bottom: 60rpx;">
+    <text class="logo-text">个人记账</text>
+  </view>
+  
+  <view class="card" style="width: 100%; max-width: 600rpx; padding: 40rpx;">
+    <view class="form-item">
+      <label>用户名</label>
+      <input 
+        class="input" 
+        placeholder="请输入用户名" 
+        bindinput="handleUsernameInput"
+        value="{{username}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <label>密码</label>
+      <input 
+        class="input" 
+        placeholder="请输入密码" 
+        bindinput="handlePasswordInput"
+        value="{{password}}"
+        password
+      />
+    </view>
+    
+    <view class="error-message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+    
+    <view class="btn btn-primary" bindtap="handleLogin" wx:if="{{!loading}}">登录</view>
+    <view class="loading" wx:else>
+      <view class="loading-spinner"></view>
+      <text style="margin-left: 20rpx;">登录中...</text>
+    </view>
+    
+    <view class="register-link" style="margin-top: 30rpx; text-align: center;">
+      <text>还没有账号？</text>
+      <navigator url="/pages/register/register" class="link">立即注册</navigator>
+    </view>
+  </view>
+</view>

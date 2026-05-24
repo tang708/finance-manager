@@ -1,0 +1,89 @@
+/* pages/statistics/statistics.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #303133;
+}
+
+.filter {
+  background-color: white;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  color: #303133;
+}
+
+.arrow {
+  font-size: 24rpx;
+  color: #909399;
+}
+
+.stats-card {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.stats-item {
+  text-align: center;
+}
+
+.stats-label {
+  font-size: 28rpx;
+  color: #909399;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.stats-value {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.stats-value.income {
+  color: #67c23a;
+}
+
+.stats-value.expense {
+  color: #f56c6c;
+}
+
+.stats-value.balance {
+  color: #409EFF;
+}
+
+.chart-container {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #303133;
+  margin-bottom: 20rpx;
+  display: block;
+}

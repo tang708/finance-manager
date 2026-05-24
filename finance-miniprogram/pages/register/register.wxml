@@ -1,0 +1,54 @@
+<!-- pages/register/register.wxml -->
+<view class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+  <view class="logo" style="margin-bottom: 60rpx;">
+    <text class="logo-text">注册账号</text>
+  </view>
+  
+  <view class="card" style="width: 100%; max-width: 600rpx; padding: 40rpx;">
+    <view class="form-item">
+      <label>用户名</label>
+      <input 
+        class="input" 
+        placeholder="请输入用户名" 
+        bindinput="handleUsernameInput"
+        value="{{username}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <label>密码</label>
+      <input 
+        class="input" 
+        placeholder="请输入密码" 
+        bindinput="handlePasswordInput"
+        value="{{password}}"
+        password
+      />
+    </view>
+    
+    <view class="form-item">
+      <label>确认密码</label>
+      <input 
+        class="input" 
+        placeholder="请确认密码" 
+        bindinput="handleConfirmPasswordInput"
+        value="{{confirmPassword}}"
+        password
+      />
+    </view>
+    
+    <view class="error-message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+    <view class="success-message" wx:if="{{successMessage}}">{{successMessage}}</view>
+    
+    <view class="btn btn-primary" bindtap="handleRegister" wx:if="{{!loading}}">注册</view>
+    <view class="loading" wx:else>
+      <view class="loading-spinner"></view>
+      <text style="margin-left: 20rpx;">注册中...</text>
+    </view>
+    
+    <view class="login-link" style="margin-top: 30rpx; text-align: center;">
+      <text>已有账号？</text>
+      <navigator url="/pages/login/login" class="link">立即登录</navigator>
+    </view>
+  </view>
+</view>

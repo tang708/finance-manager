@@ -1,0 +1,76 @@
+<!-- pages/add-transaction/add-transaction.wxml -->
+<view class="container">
+  <view class="nav-bar">
+    <text class="nav-title">{{isEdit ? '编辑交易' : '添加交易'}}</text>
+    <text class="delete-btn" wx:if="{{isEdit}}" bindtap="handleDelete">删除</text>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx; padding: 30rpx;">
+    <view class="form-item">
+      <label>类型</label>
+      <view class="type-selector" style="display: flex; gap: 20rpx; margin-top: 15rpx;">
+        <view class="type-item" bindtap="handleTypeChange" data-type="1" wx:if="{{type === 1}}" style="flex: 1; background-color: var(--danger-color); color: white; padding: 20rpx; border-radius: var(--border-radius); text-align: center; font-weight: 500; transition: var(--transition);">
+          <text>支出</text>
+        </view>
+        <view class="type-item" bindtap="handleTypeChange" data-type="1" wx:else style="flex: 1; background-color: white; color: var(--dark-color); padding: 20rpx; border: 1rpx solid var(--border-color); border-radius: var(--border-radius); text-align: center; font-weight: 500; transition: var(--transition);">
+          <text>支出</text>
+        </view>
+        <view class="type-item" bindtap="handleTypeChange" data-type="2" wx:if="{{type === 2}}" style="flex: 1; background-color: var(--success-color); color: white; padding: 20rpx; border-radius: var(--border-radius); text-align: center; font-weight: 500; transition: var(--transition);">
+          <text>收入</text>
+        </view>
+        <view class="type-item" bindtap="handleTypeChange" data-type="2" wx:else style="flex: 1; background-color: white; color: var(--dark-color); padding: 20rpx; border: 1rpx solid var(--border-color); border-radius: var(--border-radius); text-align: center; font-weight: 500; transition: var(--transition);">
+          <text>收入</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <label>分类</label>
+      <picker bindchange="handleCategoryChange" value="{{categoryIndex}}" range="{{categories}}">
+        <view class="picker">
+          <text>{{categories[categoryIndex] || '请选择分类'}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <label>金额</label>
+      <input 
+        class="input" 
+        placeholder="请输入金额" 
+        bindinput="handleAmountInput"
+        value="{{amount}}"
+        type="number"
+      />
+    </view>
+    
+    <view class="form-item">
+      <label>日期</label>
+      <picker mode="date" value="{{date}}" bindchange="handleDateChange">
+        <view class="picker">
+          <text>{{date}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <label>备注</label>
+      <input 
+        class="input" 
+        placeholder="请输入备注" 
+        bindinput="handleRemarkInput"
+        value="{{remark}}"
+      />
+    </view>
+    
+    <view class="error-message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+    
+    <view class="btn btn-primary" bindtap="handleSave" wx:if="{{!loading}}">{{isEdit ? '保存' : '添加'}}</view>
+    <view class="loading" wx:else>
+      <view class="loading-spinner"></view>
+      <text style="margin-left: 20rpx;">处理中...</text>
+    </view>
+  </view>
+</view>

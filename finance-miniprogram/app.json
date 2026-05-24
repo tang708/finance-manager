@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/transaction/transaction",
+    "pages/add-transaction/add-transaction",
+    "pages/statistics/statistics",
+    "pages/budget/budget",
+    "pages/ai-assistant/ai-assistant"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#409EFF",
+    "navigationBarTitleText": "个人记账",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#409EFF",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/transaction/transaction",
+        "text": "记账"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/budget/budget",
+        "text": "预算"
+      },
+      {
+        "pagePath": "pages/ai-assistant/ai-assistant",
+        "text": "AI助手"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

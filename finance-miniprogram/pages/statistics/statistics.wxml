@@ -1,0 +1,44 @@
+<!-- pages/statistics/statistics.wxml -->
+<view class="container">
+  <view class="nav-bar">
+    <text class="nav-title">数据统计</text>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx;">
+    <view class="filter">
+      <picker mode="date" fields="month" value="{{selectedMonth}}" bindchange="handleMonthChange">
+        <view class="picker">
+          <text>{{selectedMonth}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <view class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-top: 20rpx;">
+    <view class="stats-card">
+      <view class="stats-item">
+        <text class="stats-label">总收入</text>
+        <text class="stats-value income">¥{{income}}</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-label">总支出</text>
+        <text class="stats-value expense">¥{{expense}}</text>
+      </view>
+      <view class="stats-item">
+        <text class="stats-label">结余</text>
+        <text class="stats-value balance">¥{{balance}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx; padding: 30rpx;">
+    <text class="section-title">支出分类占比</text>
+    <canvas canvas-id="categoryChart" style="width: 100%; height: 500rpx; margin-top: 20rpx;"></canvas>
+  </view>
+  
+  <view class="card" style="margin-top: 20rpx; margin-bottom: 30rpx; padding: 30rpx;">
+    <text class="section-title">收支趋势</text>
+    <canvas canvas-id="trendChart" style="width: 100%; height: 500rpx; margin-top: 20rpx;"></canvas>
+  </view>
+</view>
